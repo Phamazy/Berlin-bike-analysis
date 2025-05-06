@@ -1,0 +1,14 @@
+# Virtuelle Umgebungen
+venv/
+env/
+.venv/
+
+# Python Bytecode-Dateien
+__pycache__/
+*.pyc
+
+# Jupyter Notebooks Checkpoints
+.ipynb_checkpoints/
+
+# Logfiles
+*.log
