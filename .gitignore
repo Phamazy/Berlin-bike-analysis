@@ -11,10 +11,8 @@ venv/
 # Datendateien ignorieren
 data/
 
-# Ausgaben und Berichte
-outputs/
-*.pdf
-
+output/*
+!output/report.pdf
 # Shapefiles ignorieren
 *.shp
 *.shx
@@ -23,4 +21,7 @@ outputs/
 
 # Log-Dateien
 *.log
+
+# Ignoriere alle .DS_Store-Dateien
+.DS_Store
 
