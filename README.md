@@ -1,39 +1,62 @@
-# 🚲 Analyse des Radverkehrs in Berlin
+# 🚲 Berliner Fahrraddiebstahlanalyse
 
-Dieses Projekt untersucht Fahrradzähldaten in Berlin mit dem Ziel, Nutzungsmuster, saisonale Schwankungen und Einflussfaktoren wie Wochentage oder Wetterbedingungen zu analysieren.
-
-## 📊 Zielsetzung
-
-- Entwicklung des Fahrradaufkommens über Monate und Jahre
-- Vergleich stark und schwach frequentierter Zählstellen
-- Identifikation von Einflussfaktoren (z. B. Wochentag, Uhrzeit)
-
-## 🗂️ Datenquelle
-
-➡️ [Fahrradzählstellen Berlin (daten.berlin.de)](https://daten.berlin.de/datensaetze/fahrradz%C3%A4hlstellen-berlin)
-
-## ⚙️ Verwendete Technologien
-
-- Python 3.x
-- pandas
-- matplotlib
-- seaborn
-- JupyterLab
+Dieses Projekt analysiert Fahrraddiebstähle in Berlin anhand eines bereitgestellten Diebstahldatensatzes (CSV) sowie eines LOR-Shapefiles (Gebietseinheiten Berlins). Ziel ist es, regionale Schwerpunkte sowie Schadenssummen zu visualisieren und zu kategorisieren.
 
 ## 📁 Projektstruktur
 
-berlin-bike-analysis/ ├── data/ ├── notebooks/ ├── plots/ ├── README.md └── requirements.txt
+berlin-bike-theft-analysis/
+├── data/
+│   ├── bike_thefts.csv
+│   └── shapefiles/
+│       ├── BZR_*.shp
+│       ├── PLR_*.shp
+│       └── PGR_*.shp
+├── notebooks/
+│   └── 01_bike_theft_analysis.ipynb
+├── outputs/
+│   └── reports.pdf
+├── venv/  # virtuelle Umgebung
+├── .gitignore
+├── README.md
+└── requirements.txt
 
-## 📈 Beispielanalysen
 
-- Monatsverlauf der Fahrradnutzung
-- Vergleich Wochentage vs. Wochenende
-- Top-Zählstellen
 
-## 🚀 Lokale Ausführung
+## 🧪 Funktionalität
+
+- **Einlesen und Bereinigung** der LOR-IDs
+- **Gruppierung nach LOR**: Anzahl Diebstähle, Gesamtschaden
+- **Berechnung Schaden pro Diebstahl**
+- **Kategorisierung** von LORs (hoch/geringes Risiko)
+- **Visualisierung** auf Karte mit `geopandas` & `matplotlib`
+
+## 📦 Abhängigkeiten
+
+Siehe `requirements.txt`.
+
+## ▶️ Verwendung
 
 ```bash
-git clone https://github.com/dein-nutzername/berlin-bike-analysis.git
-cd berlin-bike-analysis
+# 1. Klonen
+git clone https://github.com/dein-nutzername/berlin-bike-theft-analysis.git
+cd berlin-bike-theft-analysis
+
+# 2. Virtuelle Umgebung (empfohlen)
+python -m venv venv
+source venv/bin/activate  # oder venv\Scripts\activate unter Windows
+
+# 3. Installiere Pakete
 pip install -r requirements.txt
-jupyter lab
+
+# 4. Starte Notebook
+jupyter notebook notebooks/01_bike_theft_analysis.ipynb
+
+## 📍 Hinweis zu den Daten
+
+Die verwendeten Daten unterliegen ggf. Datenschutzrichtlinien. Die Diebstahldaten basieren auf öffentlich zugänglichen Quellen (z. B. Polizeistatistik) und wurden für Analysezwecke aufbereitet.  
+Die verwendeten Shapefiles stammen aus dem Berliner LOR-System *(Lebensweltlich orientierte Räume)* und ermöglichen eine räumliche Einordnung auf Stadtteilebene.
+
+## 🧑‍💻 Autor
+
+**Nils Gerdes**  
+M.Sc. Biomedizin – Spezialisierung: Genetische Forensik 

@@ -1,14 +1,26 @@
-# Virtuelle Umgebungen
-venv/
-env/
-.venv/
-
-# Python Bytecode-Dateien
-__pycache__/
+# Python-Dateien ignorieren
 *.pyc
+__pycache__/
 
-# Jupyter Notebooks Checkpoints
-.ipynb_checkpoints/
+# Jupyter Notebook-Dateien ignorieren
+.ipynb_checkpoints
 
-# Logfiles
+# Virtual Environment
+venv/
+
+# Datendateien ignorieren
+data/
+
+# Ausgaben und Berichte
+outputs/
+*.pdf
+
+# Shapefiles ignorieren
+*.shp
+*.shx
+*.dbf
+*.prj
+
+# Log-Dateien
 *.log
+
